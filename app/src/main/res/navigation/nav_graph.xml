@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/IpInput">
+
+    <fragment
+        android:id="@+id/IpInput"
+        android:name="com.example.opencv_aruco_test.IpInput"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_ip_input">
+
+        <action
+            android:id="@+id/action_ip_to_aruco"
+            app:destination="@id/Aruco" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Aruco"
+        android:name="com.example.opencv_aruco_test.ArucoManager"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_aruco_manager">
+
+        <action
+            android:id="@+id/action_aruco_to_ip"
+            app:destination="@id/IpInput" />
+    </fragment>
+</navigation>
